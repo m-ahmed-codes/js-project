@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        body {
+            background-color: bisque;
+        }
+
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1))
+        }
+
+        .carousel-indicators li {
+            background-color: #282828;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+        }
+
+        body {
+            background-color: #C1CFEA;
+            /* width: ; */
+        }
+
+        .gradient-sunny {
+            background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1))
+        }
+
+        .gradient-rain {
+            background: #00d2ff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #C9DCE9, #2C43B0);
+            /*  Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #C9DCE9, #2C43B0);
+
+        }
+
+        .gradient-cloudy {
+            background: #00d2ff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #92DFF3, #fff4c2);
+            /*  Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #92DFF3, #fff4c2);
+        }
+
+        .gradient-wind {
+            background: #00d2ff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #87CEFA, #D9F2FE);
+            /*  Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #87CEFA, #D9F2FE);
+        }
+
+        .gradient-night {
+            background: #00d2ff;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #87CEFA, #D9F2FE);
+            /*  Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #003366, #030F33);
+
+        }
+
+        .white {
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container pt-5">
+
+        <div id="carouselExampleIndicators" class="carousel carousel-dark slide pt-5" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <!-- *********** First Card******************** -->
+                <div class="carousel-item  active">
+                    <div class="card  " style="border-radius: 25px; height: 13rem;" id="addCustomGradient">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between mt-3 pb-2" style="height: 150px ;">
+                                <div class="mt-4 mt-md-0 ">
+                                    <h2 class="display-2 " id="temp">23°C</h2>
+                                    <p class="text-muted mb-0 " id="place">Coimbra, Portugal</p>
+                                </div>
+                                <div id="image">
+                                    <!-- <img src="https://img.icons8.com/plasticine/600/000000/sun--v1.png" width="150px"> -->
+                                    <!-- <img src="https://img.icons8.com/color/600/000000/wind.png"  /> -->
+                                    <!-- <img class="mt-3" src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/600/000000/external-wind-weather-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png" height="100vh"/> -->
+                                    <!-- <img class="mt-3" src="https://img.icons8.com/external-justicon-lineal-color-justicon/600/000000/external-rainy-spring-justicon-lineal-color-justicon.png" height="100vh"/> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- *************** Middle Card******************** -->
+                <div class="carousel-item">
+                    <div class="card " style="border-radius: 25px;  height: 13rem;">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-around align-items-center text-center mt-3  pt-2"
+                                id="Hour_That_Day">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- **************** Last Card*************** -->
+                <div class="carousel-item">
+                    <div class="card " style="border-radius: 25px;  height: 13rem;">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-around text-center my-4  pt-2" id="Temp_Days">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="carousel-indicators mb-2 " style="height: 1rem;">
+                <button type="button " data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                    class="active text-dark" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+        </div>
+
+
+        <!-- 
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+        </button> -->
+
+    </div>
+
+
+
+    <script>
+        let temp = document.querySelector('#temp')
+        let place = document.querySelector('#place')
+        let Temp_Days = document.querySelector('#Temp_Days')
+        let Hour_That_Day = document.querySelector('#Hour_That_Day')
+        let image = document.querySelector('#image')
+        let addCustomGradient = document.querySelector('#addCustomGradient')
+
+        let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/pakistan?unitGroup=metric&key=6Z8LEUJVDRRZW4AGKJAAUB2KC&contentType=json"
+        // let url = "pakistan.json"
+
+        fetch(url)
+            .then((response) => {
+                if (response.ok) {
+                    // console.log(response.json())
+                    return response.json()
+                } else {
+                    console.log('error')
+                }
+            })
+            .then((data) => {
+                // console.log(data)
+
+                place.innerHTML = `${data.timezone},${data.resolvedAddress}`
+                function removeGradient() {
+                    addCustomGradient.classList.remove('gradient-cloudy')
+                    addCustomGradient.classList.remove('gradient-sunny')
+                    addCustomGradient.classList.remove('gradient-wind')
+                    addCustomGradient.classList.remove('gradient-rain')
+                    addCustomGradient.classList.remove('gradient-night')
+                }
+
+                // this for each is used in to get into days array
+                data.days.forEach((day, index) => {
+                    // this condition  is used to put fav icon according to weather condition
+                    let condition
+                    // this color is used to put color into the icons 
+                    let color
+
+                    let date = new Date(`${day.datetime}`)
+
+                    // console.log(day.icon)
+
+                    // This block will run when the icon will have string name partly   
+                    // And then it will intialize condition according to the weather  
+                    if (day.icon.includes('partly') || day.icon.includes('cloudy')) {
+                        condition = 'cloud'
+                        color = '#C1CFEA'
+                    }
+                    if (day.icon.includes('clear') || day.icon.includes('sunny')) {
+                        condition = 'sun'
+                        color = '#ff9b00'
+                    }
+                    if (day.icon.includes('wind')) {
+                        condition = 'wind'
+                        color = '#3131c6'
+                    }
+                    if (day.icon.includes('rain')) {
+                        condition = 'cloud-showers-heavy'
+                        color = '#3030a8'
+                    }
+
+                    // this will only iterate five time then condition will be false
+                    // This block of code will populate data in last card
+                    if (index < 5) {
+                        Temp_Days.innerHTML += `<div class="flex-column">
+                        <p class="small"><strong>${day.temp}°C</strong></p>
+                        <i class="fas fa-${condition} fa-2x mb-3" style="color: ${color} ;"></i>
+                        <p class="mb-0"><strong>${date.toDateString().slice(0, 4)}</strong></p>
+                        </div> `
+                    }
+                })
+
+
+
+
+                // This block of code will populate data in middle card
+                // **********************  Middle Card ******************
+                // let date = new Date()
+                // let date_days = date.getDate()
+                // let date_hours = date.getHours()
+
+                // This will add zero in the start
+
+                // this for loop is use dto get inside days array
+                for (let i = 0; i < data.days.length; i++) {
+
+                    let date = new Date()
+                    let date_days = date.getDate()
+
+                    let date_hours = date.getHours()
+                    // console.log(date_hours)
+
+                    let date_days_With_zero = (date_days < 10) ? '0' + date_days : date_days
+                    let date_hours_With_zero = (date_hours < 10) ? '0' + date_hours : date_hours
+
+
+                    // console.log(date_hours_With_zero)
+
+                    // this If checks date of the currect day 
+                    if (data.days[i].datetime.endsWith(date_days_With_zero)) {
+                        // console.log('first')
+                        // console.log(i)
+
+                        // this for loop get into the hours current day  
+                        for (let j = 0; j < data.days[i].hours.length; j++) {
+                            // console.log('second')
+                            // console.log(j)
+
+                            // this If checks the exact hour with the hours array to give Every hour data     
+                            if (data.days[i].hours[j].datetime.startsWith(date_hours_With_zero)) {
+                                // console.log(j)
+                                // console.log('third')
+
+
+                                // ************** First page ***********************
+
+
+                                // ************** Current Temp As Per Hour ***********************
+                                temp.innerHTML = `${data.days[i].hours[j].temp}°C`
+                                // console.log(data.days[i].hours[j], true)
+
+
+
+                                // ************** First page ***********************
+                                // ************** BackGround Color and Image ***********************
+
+                                // All these If statement check that Weather meet the condition or not  
+                                if (data.days[i].hours[j].icon.includes('partly') || data.days[i].hours[j].icon.includes('cloudy')) {
+                                    removeGradient()
+                                    image.innerHTML = `<img class="mt-3" src="https://img.icons8.com/plasticine/600/000000/partly-cloudy-day--v1.png" height="100vh"/>`
+                                    addCustomGradient.classList.add('gradient-cloudy')
+                                    place.classList.remove('white')
+                                    temp.classList.remove('white')
+                                }
+                                if (data.days[i].hours[j].icon.includes('clear') || data.days[i].hours[j].icon.includes('sunny')) {
+                                    removeGradient()
+                                    addCustomGradient.classList.add('gradient-sunny')
+                                    image.innerHTML = `<img class="" src="https://img.icons8.com/plasticine/600/000000/sun--v1.png" width="150px"> `
+                                    place.classList.remove('white')
+                                    temp.classList.remove('white')
+
+                                }
+                                if (data.days[i].hours[j].icon.includes('wind')) {
+                                    removeGradient()
+                                    image.innerHTML = `<img class="mt-3" src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/600/000000/external-wind-weather-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png" height="100vh"/>`
+                                    addCustomGradient.classList.add('gradient-wind')
+                                    place.classList.remove('white')
+                                    temp.classList.remove('white')
+                                }
+                                if (data.days[i].hours[j].icon.includes('rain')) {
+                                    removeGradient()
+                                    image.innerHTML = `<img class="mt-3" src="https://img.icons8.com/external-justicon-lineal-color-justicon/600/000000/external-rainy-spring-justicon-lineal-color-justicon.png" height="100vh"/>`
+                                    addCustomGradient.classList.add('gradient-rain')
+                                    temp.classList.remove('white')
+                                    place.classList.remove('white')
+                                }
+
+
+                                // This If will check day time whether it is day or night
+                                if (data.days[i].hours[j].datetime > '18' || data.days[i].hours[j].datetime < '06') {
+                                    removeGradient()
+                                    image.innerHTML = `<img  src="https://img.icons8.com/plasticine/600/000000/partly-cloudy-night.png" height="150vh"/>`
+                                    addCustomGradient.classList.add('gradient-night')
+                                    temp.classList.add('white')
+                                    temp.classList.remove('text-muted')
+                                    place.classList.add('white')
+
+                                    // This If check that whether it is raining or not in the night 
+                                    if (data.days[i].hours[j].icon.includes('rain')) {
+                                        removeGradient()
+                                        image.innerHTML = `<img class="mt-3" src="https://img.icons8.com/external-justicon-lineal-color-justicon/600/000000/external-rainy-spring-justicon-lineal-color-justicon.png" height="100vh"/>`
+                                        addCustomGradient.classList.add('gradient-rain')
+                                        temp.classList.remove('white')
+                                        place.classList.remove('white')
+
+                                    }
+
+                                }
+
+                                // this for loop is used for the Middle Card 
+
+                                
+                                for (let k = j; k < j + 5; k++) {
+
+                                    // console.log(data.days[i].hours[k])
+                                    // console.log(j)
+                                    // j = j >
+
+                                    if (data.days[i].hours[k] == undefined) {
+                                        // console.log(true,)
+                                        let lastAppend = document.querySelector('#append')
+                                        // console.log(Hour_That_Day.childElementCount)
+
+                                        j = 0
+                                        for (let m = Hour_That_Day.childElementCount; m < 5; m++) {
+                                            // const element = array[m];
+
+                                            i++
+                                            if (Hour_That_Day.childElementCount < 5) {
+                                                let hour_condition
+                                                let hour_icon_color
+
+                                                // console.log(true)
+                                                // console.log(i)
+
+
+                                                if (data.days[i].hours[j].icon.includes('partly') || data.days[i].hours[j].icon.includes('cloudy')) {
+                                                    hour_condition = 'cloud'
+                                                    hour_icon_color = '#C1CFEA'
+                                                }
+                                                if (data.days[i].hours[j].icon.includes('clear') || data.days[i].hours[j].icon.includes('sunny')) {
+                                                    hour_condition = 'sun'
+                                                    hour_icon_color = '#ff9b00'
+                                                }
+                                                if (data.days[i].hours[j].icon.includes('wind')) {
+                                                    hour_condition = 'wind'
+                                                    hour_icon_color = '#3131c6'
+                                                }
+                                                if (data.days[i].hours[j].icon.includes('rain')) {
+                                                    hour_condition = 'cloud-showers-heavy'
+                                                    hour_icon_color = '#3030a8'
+                                                }
+                                                if (data.days[i].hours[j].icon.includes('clear-night')) {
+                                                    hour_condition = 'cloud-moon'
+                                                    hour_icon_color = '#3030a8'
+                                                }
+
+
+
+
+
+                                                //  change AM and PM time 
+                                                let time = (data.days[i].hours[j].datetime > 12) ? "PM" : "AM"
+                                                
+
+
+                                                //  It convert 13 o'clock to 1 o'clock
+                                                let time_Convert = (Number(data.days[i].hours[j].datetime.slice(0, 2)) > 12) ? Number(data.days[i].hours[j].datetime.slice(0, 2)) - 12 : Number(data.days[i].hours[j].datetime.slice(0, 2))
+                                                time_Convert = time_Convert < 10 ? '0' + time_Convert : time_Convert
+
+
+
+                                                let div = document.createElement('div')
+                                                div.setAttribute('class', 'flex-column')
+                                                div.innerHTML += `
+                                                <p class="small"><strong >${data.days[i].hours[j].temp}°C</strong></p>
+                                                <i class="fas  fa-${hour_condition} fa-2x mb-3" style="color:${hour_icon_color};"></i>
+                                                <p class="mb-0"><strong>${time_Convert}:00</strong></p>
+                                                <p class="mb-0 text-muted" style="font-size: .65rem;">${time}</p>
+                                                `
+
+
+                                                // let d =c
+                                                Hour_That_Day.append(div)
+
+                                                i--
+                                                j = j + 1
+
+                                            }
+
+                                            // console.log(i)
+                                        }
+
+
+                                    }
+
+
+                                    // console.log(k)
+                                    // console.log(j)
+                                    // these If check the weather conditoin as per hour and populate in the middle card 
+
+                                    // k = k == 23 ? 00:k
+                                    function elsee() {
+                                        let hour_condition
+                                        let hour_icon_color
+
+
+                                        if (data.days[i].hours[j].icon.includes('partly') || data.days[i].hours[j].icon.includes('cloudy')) {
+                                            hour_condition = 'cloud'
+                                            hour_icon_color = '#C1CFEA'
+                                        }
+                                        if (data.days[i].hours[j].icon.includes('clear') || data.days[i].hours[j].icon.includes('sunny')) {
+                                            hour_condition = 'sun'
+                                            hour_icon_color = '#ff9b00'
+                                        }
+                                        if (data.days[i].hours[j].icon.includes('wind')) {
+                                            hour_condition = 'wind'
+                                            hour_icon_color = '#3131c6'
+                                        }
+                                        if (data.days[i].hours[j].icon.includes('rain')) {
+                                            hour_condition = 'cloud-showers-heavy'
+                                            hour_icon_color = '#3030a8'
+                                        }
+                                        if (data.days[i].hours[j].icon.includes('clear-night')) {
+                                            hour_condition = 'cloud-moon'
+                                            hour_icon_color = '#3030a8'
+                                        }
+
+
+                                        //  change AM and PM time 
+                                        let time = (data.days[i].hours[k].datetime > '12') ? "PM" : "AM"
+                                        // console.log(data.days[i].hours[k].datetime,'aa')
+                                        //  It convert 13 o'clock to 1 o'clock
+                                        let time_Convert = (Number(data.days[i].hours[k].datetime.slice(0, 2)) > 12) ? Number(data.days[i].hours[k].datetime.slice(0, 2)) - 12 : Number(data.days[i].hours[k].datetime.slice(0, 2))
+                                        time_Convert = time_Convert < 10 ? '0' + time_Convert : time_Convert
+
+
+                                        // console.log(first)
+                                        Hour_That_Day.innerHTML += ` <div class="flex-column" id='append'>
+                                            <p class="small"><strong >${data.days[i].hours[k].temp}°C</strong></p>
+                                            <i class="fas  fa-${hour_condition} fa-2x mb-3" style="color:${hour_icon_color};"></i>
+                                            <p class="mb-0"><strong>${time_Convert}:00</strong></p>
+                                            <p class="mb-0 text-muted" style="font-size: .65rem;">${time}</p>
+                                            </div>`
+                                    }
+                                    elsee()
+                                }
+                                break;
+
+                            }
+                        }
+                    }
+                }
+
+            })
+
+//    let b = 6
+// let a = new Date(`2022-07-16`)
+// console.log(a)
+// console.log(a.toDateString().slice(0,4))
+
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script ript src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
